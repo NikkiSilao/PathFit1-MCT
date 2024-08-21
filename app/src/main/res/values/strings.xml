@@ -1,0 +1,61 @@
+<resources>
+    <string name="settings">Settings</string>
+
+    <string name="app_name">Pathfit 1 final app</string>
+
+    <string name="get_started">Get Started</string>
+
+    <string name="explore_text_part1">Step into a World of</string>
+    <string name="explore_text_part2">Movement Let\'s Explore!</string>
+
+    <string name="image_description">Splash Screen Image</string>
+
+    <string name="lessons">Lessons</string>
+
+    <string name="bookmark">Bookmark</string>
+
+
+    <string name="header_text">Hi, Students 👋</string>
+    <string name="subtitle_text">Movement Competencies Training</string>
+    <string name="search_hint">Search</string>
+    <string name="lessons_title">Lessons:</string>
+    <string name="lesson_introduction">Introduction</string>
+    <string name="lesson_components">Components</string>
+    <string name="lesson_principles">Principles</string>
+    <string name="lesson_human_body">Human Body</string>
+    <string name="lesson_lifespan">Lifespan</string>
+
+    <string name="lesson1_title">Introduction</string>
+    <string name="lesson1_subtitle">of Movement Education</string>
+    <string name="lesson2_title">Components</string>
+    <string name="lesson2_subtitle">of Physical Fitness</string>
+    <string name="lesson3_title">Principles</string>
+    <string name="lesson3_subtitle">of Physical Training and FITT Principle</string>
+    <string name="lesson4_title">Human Body</string>
+    <string name="lesson4_subtitle">responsible for the body function</string>
+    <string name="lesson5_title">Lifespan</string>
+    <string name="lesson5_subtitle">Development</string>
+    <string name="lesson6_title">Body</string>
+    <string name="lesson6_subtitle">Posture</string>
+    <string name="lesson7_title">Non locomotor</string>
+    <string name="lesson7_subtitle">and locomotor</string>
+    <string name="lesson8_title">Introduction</string>
+    <string name="lesson8_subtitle">to Nutrition and Wellness</string>
+    <string name="lesson9_title">Eating</string>
+    <string name="lesson9_subtitle">Disorder</string>
+    <string name="lesson10_title">Dietary</string>
+    <string name="lesson10_subtitle">Plan</string>
+
+
+    <string name="lesson_content">Lesson Content Here...</string>
+    <string name="burger_menu">Menu</string>
+    <string name="placeholder_image">Placeholder Image</string>
+    <string name="bookmark_icon">Bookmark</string>
+    <string name="page_number">Page</string>
+    <string name="page_number_format">Page %1$d of %2$d</string>
+    <string name="prev">Previous</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
