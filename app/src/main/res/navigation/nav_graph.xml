@@ -4,9 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
+
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.pathfit1mct.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.example.pathfit1mct.Main.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_lessonDetailFragment"
+            app:destination="@id/lessonDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lessonDetailFragment"
+        android:name="com.example.pathfit1mct.LessonDetailFragment"
+        android:label="fragment_lesson_detail"
+        tools:layout="@layout/fragment_lesson_detail" >
+        <action
+            android:id="@+id/action_lessonDetailFragment_to_quizConfirmationFragment"
+            app:destination="@id/quizConfirmationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizConfirmationFragment"
+        android:name="com.example.pathfit1mct.Quiz.QuizConfirmationFragment"
+        android:label="QuizConfirmationFragment"
+        tools:layout="@layout/fragment_quiz_confirmation" >
+        <action
+            android:id="@+id/action_quizConfirmationFragment_to_lessonDetailFragment"
+            app:destination="@id/lessonDetailFragment" />
+        <action
+            android:id="@+id/action_quizConfirmationFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.pathfit1mct.Quiz.QuizFragment"
+        android:label="QuizFragment" />
+
 </navigation>

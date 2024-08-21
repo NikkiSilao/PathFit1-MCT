@@ -12,20 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pathfit1MCT"
         tools:targetApi="31">
+
+        <!-- Splash Screen Activity -->
         <activity
             android:name=".Main.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Pathfit1MCT">
         </activity>
+
+
+
     </application>
 
 </manifest>
