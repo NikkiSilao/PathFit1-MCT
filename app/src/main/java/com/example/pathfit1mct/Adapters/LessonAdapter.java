@@ -13,31 +13,38 @@ import com.example.pathfit1mct.R;
 
 import java.util.List;
 
-public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
+public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonCategoryViewHolder> {
 
-    private final List<LessonModel> lessonList;
-    private final OnItemClickListener listener;
+    private List<LessonModel> lessonList;
+    private OnItemClickListener listener;
 
     public interface OnItemClickListener {
-        void onItemClick(int lessonNumber);
+        void onItemClick(int position);
     }
 
-    public LessonAdapter(List<LessonModel> lessonList, OnItemClickListener listener) {
-        this.lessonList = lessonList;
+    public void setOnItemClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
 
+    public LessonAdapter(List<LessonModel> lessonList) {
+        this.lessonList = lessonList;
+    }
+
+
+
     @NonNull
     @Override
-    public LessonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LessonCategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_button_lesson, parent, false);
-        return new LessonViewHolder(view);
+        return new LessonAdapter.LessonCategoryViewHolder(view, listener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
-        LessonModel lesson = lessonList.get(position);
-        holder.bind(lesson, position);
+    public void onBindViewHolder(@NonNull LessonCategoryViewHolder holder, int position) {
+        LessonModel currentCategory = lessonList.get(position);
+        holder.lessonNumber.setText(currentCategory.getNumberResId());  // assuming a number field exists
+        holder.lessonTitle.setText(currentCategory.getTitleResId());
+        holder.lessonSubtitle.setText(currentCategory.getSubtitleResId());  // assuming a subtitle field exists
     }
 
     @Override
@@ -45,25 +52,25 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         return lessonList.size();
     }
 
-    public class LessonViewHolder extends RecyclerView.ViewHolder {
-        private final TextView lessonNumber;
-        private final TextView lessonTitle;
-        private final TextView lessonSubtitle;
+    public static class LessonCategoryViewHolder extends RecyclerView.ViewHolder {
 
-        public LessonViewHolder(@NonNull View itemView) {
+        public TextView lessonNumber;    // Add these variables to match the first code
+        public TextView lessonTitle;
+        public TextView lessonSubtitle;
+
+        public LessonCategoryViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
-            lessonNumber = itemView.findViewById(R.id.lesson_number);
+            lessonNumber = itemView.findViewById(R.id.lesson_number);    // Assuming IDs exist in layout
             lessonTitle = itemView.findViewById(R.id.lesson_title);
             lessonSubtitle = itemView.findViewById(R.id.lesson_subtitle);
-        }
-
-        public void bind(final LessonModel lesson, final int position) {
-            lessonNumber.setText(lesson.getNumberResId());
-            lessonTitle.setText(lesson.getTitleResId());
-            lessonSubtitle.setText(lesson.getSubtitleResId());
 
             itemView.setOnClickListener(v -> {
-                listener.onItemClick(position + 1); // Lesson numbers start from 1
+                if (listener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(position);
+                    }
+                }
             });
         }
     }
